@@ -260,6 +260,7 @@ export default function App() {
       sector: 'agriculture',
       status: 'optimal',
       healthIndex: 94.8,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       metrics: [
         { name: 'Crop Health', value: '94.8%', status: 'optimal', delta: '+1.5%' },
         { name: 'Market Price', value: '$385 / Ton', status: 'optimal', delta: '+2.4%' },
@@ -281,6 +282,7 @@ export default function App() {
       sector: 'industry',
       status: 'optimal',
       healthIndex: 96.2,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       metrics: [
         { name: 'Supplier Delivery Rate', value: '98.2% On-Time', status: 'optimal', delta: '+1.5%' },
         { name: 'Storage Capacity Used', value: '74.6% Full', status: 'nominal', delta: '+3.1%' },
@@ -302,6 +304,7 @@ export default function App() {
       sector: 'service',
       status: 'optimal',
       healthIndex: 95.8,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       metrics: [
         { name: 'Transport Dispatch', value: 'Route A (Optimized)', status: 'optimal', delta: '-18m travel' },
         { name: 'Loan & Insurance Match', value: 'Pre-Approved Plan B', status: 'optimal', delta: 'matched' },
