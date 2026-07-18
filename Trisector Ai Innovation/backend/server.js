@@ -58,6 +58,10 @@ const generateAIChatResponse = (message, sector) => {
 };
 
 // API Route: Sector Predictions and Metrics
+app.get('/', (req, res) => {
+  res.json({ status: "active", service: "Trisector AI Backend Node", message: "Connect endpoints via /api/predictions/:sector or /api/chat" });
+});
+
 app.get('/api/predictions/:sector', (req, res) => {
   const { sector } = req.params;
   const timestamp = new Date().toLocaleTimeString();
