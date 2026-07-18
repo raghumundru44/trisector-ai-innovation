@@ -22,6 +22,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  ChevronDown,
   TrendingDown,
   Clock,
   UserCheck,
@@ -220,6 +221,207 @@ const sectorScenarios = {
   }
 };
 
+const translations = {
+  en: {
+    heroTitle: "One AI Platform. Three Sectors. Smarter Decisions.",
+    heroSubtitle: "Trisector AI integrates Agriculture, Industry, and Services into a single neural control room. Optimize yield, monitor storage, and match logistics in real-time.",
+    launchConsole: "Launch Console",
+    problemHeader: "Fragmented Tools Lead to Operational Blindspots",
+    problemSubtitle: "Separate systems slow down action, drain resources, and create gaps between fields, storage mills, and transport lines.",
+    ourSolution: "Our Solution",
+    solutionTitle: "Three Specialized Sectors. One Intelligent Engine.",
+    solutionSubtitle: "Trisector AI replaces separate, slow tools with a single smart control room. By reading sensors from your fields, factories, and support teams, the platform automatically recommends the best steps to keep operations running smoothly.",
+    liveSimulation: "Live Simulation",
+    consoleTitle: "Unified Trisector Console Preview",
+    consoleSubtitle: "Experience the real-time responsive dashboard directly. Switch sectors to query metrics, view sensor chart trends, and chat with the specialized AI chatbot.",
+    telemetryStatus: "Telemetry status",
+    loadingFeed: "Loading Feed...",
+    systemsNominal: "Systems Nominal (No anomalies)",
+    activeWarnings: "Active warnings detected",
+    lastSync: "Last Sync",
+    healthIndex: "Health Index",
+    hourlyTelemetry: "Hourly telemetry logs",
+    loadingChart: "Loading Chart...",
+    sensorTrend: "Real-Time Sensor Influx Trend",
+    sectorAI: "Sector AI Assistant",
+    nodeCopilot: "Node Copilot Active",
+    querySector: "Query the AI...",
+    platformSynergy: "Platform Synergy",
+    simulatorTitle: "Unified Supply Chain Simulator",
+    simulatorSubtitle: "Experience the end-to-end synergy: A single listing submitted by a Farmer instantly updates storage logs for the Rice Mill and matches dispatch routes and insurance for the Fleet.",
+    farmerInput: "1. Agriculture Input (Farmer)",
+    cropListingIngress: "Crop Listing Ingress",
+    bagsOfPaddyReady: "Bags of Paddy Ready",
+    averageLoad: "AVERAGE LOAD",
+    maxDispatch: "MAX DISPATCH",
+    industryVerification: "2. Industry Verification (Rice Mill)",
+    storageCapacityExtrusions: "Storage Capacity & Extrusions",
+    siloSpaceLeft: "Silo Space Left",
+    siloTargetMatch: "Silo Target Match",
+    nominalAllocated: "Nominal (Allocated)",
+    overflowSplit: "Overflow (Split Silo)",
+    siloHandlesComfortably: "Silo #3 handles bags comfortably.",
+    needsAuxiliarySilo: "Needs auxiliary Silo #4 allocation.",
+    servicesRouting: "3. Services Routing (Transport & Finance)",
+    dispatchLogistics: "Dispatch Logistics & Credit Match",
+    transportRoute: "Transport Route",
+    optimized: "Optimized",
+    routeDescription: "Avoids I-80 bottle-neck. Saves 18m.",
+    creditInsurance: "Credit & Insurance Cover",
+    planBMatched: "Plan B Cover Match",
+    planBDescription: "Matches transit crop value",
+    executeLoop: "Execute Unified Influx Loop",
+    processingLoop: "Processing Influx Loop...",
+    synergyContract: "Synergy Contract Ledger",
+    waitingExecution: "Waiting for execution",
+    waitingDescription: "Configure farmer bag listings and click 'Execute Unified Influx Loop' to view cross-sector contract.",
+    contractActive: "Contract Active",
+    ingressOrigin: "INGRESS ORIGIN",
+    agriNode: "AGRICULTURE NODE #01",
+    cropListing: "CROP LISTING",
+    paddyRice: "Bags (Rice Paddy)",
+    storageDeployment: "STORAGE DEPLOYMENT",
+    fleetDispatch: "FLEET DISPATCH",
+    truckB4RouteA: "Truck #B4 via Route A",
+    transitCoverPlan: "TRANSIT COVER PLAN",
+    insurancePlanB: "Insurance Plan B matched",
+    totalContValue: "TOTAL CONT. VALUE",
+    synergyAutomation: "The database broker has registered the bags listing, allocated storage slot capacity in the rice mill, matched dynamic transit insurance, and queued Route A dispatch coordinates automatically."
+  },
+  hi: {
+    heroTitle: "एक एआई प्लेटफॉर्म। तीन क्षेत्र। समझदार निर्णय।",
+    heroSubtitle: "ट्राईसेक्टर एआई कृषि, उद्योग और सेवाओं को एक ही न्यूरल नियंत्रण कक्ष में जोड़ता है। वास्तविक समय में फसल स्वास्थ्य, भंडारण और रसद का अनुकूलन करें।",
+    launchConsole: "कंसोल लॉन्च करें",
+    problemHeader: "विखंडित उपकरण परिचालन में बाधा उत्पन्न करते हैं",
+    problemSubtitle: "अलग-अलग प्रणालियाँ काम को धीमा करती हैं, संसाधनों को बर्बाद करती हैं और खेतों, मिलों और परिवहन के बीच अंतराल पैदा करती हैं।",
+    ourSolution: "हमारा समाधान",
+    solutionTitle: "तीन विशिष्ट क्षेत्र। एक बुद्धिमान इंजन।",
+    solutionSubtitle: "ट्राईसेक्टर एआई अलग और धीमे उपकरणों को एक स्मार्ट कंट्रोल रूम से बदल देता है। खेतों, कारखानों और सहायता टीमों के सेंसर पढ़कर, प्लेटफ़ॉर्म स्वचालित रूप से समाधानों की सिफारिश करता है।",
+    liveSimulation: "लाइव सिमुलेशन",
+    consoleTitle: "एकीकृत ट्राईसेक्टर कंसोल पूर्वावलोकन",
+    consoleSubtitle: "वास्तविक समय के डैशबोर्ड का अनुभव करें। मेट्रिक्स देखने, चार्ट रुझानों का विश्लेषण करने और एआई चैटबॉट से बात करने के लिए क्षेत्रों को बदलें।",
+    telemetryStatus: "टेलीमेट्री स्थिति",
+    loadingFeed: "फ़ीड लोड हो रहा है...",
+    systemsNominal: "प्रणालियाँ सामान्य (कोई खराबी नहीं)",
+    activeWarnings: "सक्रिय चेतावनियाँ मिलीं",
+    lastSync: "अंतिम सिंक",
+    healthIndex: "स्वास्थ्य सूचकांक",
+    hourlyTelemetry: "प्रति घंटा टेलीमेट्री लॉग",
+    loadingChart: "चार्ट लोड हो रहा है...",
+    sensorTrend: "वास्तविक समय सेंसर डेटा प्रवाह",
+    sectorAI: "क्षेत्र एआई सहायक",
+    nodeCopilot: "नोड कोपायलट सक्रिय",
+    querySector: "एआई से पूछें...",
+    platformSynergy: "प्लेटफ़ॉर्म तालमेल",
+    simulatorTitle: "एकीकृत आपूर्ति श्रृंखला सिम्युलेटर",
+    simulatorSubtitle: "संपूर्ण तालमेल का अनुभव करें: किसान द्वारा दर्ज की गई फसल की मात्रा राइस मिल में भंडारण को अपडेट करती है और बेड़े के लिए परिवहन मार्ग और बीमा को तुरंत जोड़ती है।",
+    farmerInput: "1. कृषि इनपुट (किसान)",
+    cropListingIngress: "फसल सूची प्रविष्टि",
+    bagsOfPaddyReady: "तैयार धान की बोरियां",
+    averageLoad: "औसत भार",
+    maxDispatch: "अधिकतम प्रेषण",
+    industryVerification: "2. उद्योग सत्यापन (राइस मिल)",
+    storageCapacityExtrusions: "भंडारण क्षमता और निकास",
+    siloSpaceLeft: "साइलो खाली जगह",
+    siloTargetMatch: "साइलो लक्ष्य मिलान",
+    nominalAllocated: "सामान्य (आवंटित)",
+    overflowSplit: "अतिप्रवाह (साइलो विभाजित)",
+    siloHandlesComfortably: "साइलो #3 आसानी से बोरियों को संभाल सकता है।",
+    needsAuxiliarySilo: "अतिरिक्त साइलो #4 आवंटन की आवश्यकता है।",
+    servicesRouting: "3. सेवा रूटिंग (परिवहन और वित्त)",
+    dispatchLogistics: "प्रेषण रसद और ऋण बीमा मिलान",
+    transportRoute: "परिवहन मार्ग",
+    optimized: "अनुकूलित",
+    routeDescription: "आई-80 ट्रैफिक से बचता है। 18 मिनट बचाता है।",
+    creditInsurance: "ऋण और बीमा सुरक्षा",
+    planBMatched: "योजना बी सुरक्षा मिलान",
+    planBDescription: "परिवहन फसल मूल्य से मेल खाता है",
+    executeLoop: "एकीकृत लूप निष्पादित करें",
+    processingLoop: "लूप संसाधित हो रहा है...",
+    synergyContract: "तालमेल अनुबंध खाता",
+    waitingExecution: "निष्पादन की प्रतीक्षा है",
+    waitingDescription: "किसान की बोरियों की संख्या सेट करें और अनुबंध देखने के लिए 'एकीकृत लूप निष्पादित करें' पर क्लिक करें।",
+    contractActive: "अनुबंध सक्रिय",
+    ingressOrigin: "उत्पत्ति नोड",
+    agriNode: "कृषि नोड #01",
+    cropListing: "फसल सूची",
+    paddyRice: "बोरियां (धान/चावल)",
+    storageDeployment: "भंडारण तैनाती",
+    fleetDispatch: "वाहन प्रेषण",
+    truckB4RouteA: "ट्रक #B4 मार्ग ए द्वारा",
+    transitCoverPlan: "परिवहन सुरक्षा योजना",
+    insurancePlanB: "बीमा योजना बी स्वीकृत",
+    totalContValue: "कुल अनुबंध मूल्य",
+    synergyAutomation: "डेटाबेस ब्रोकर ने फसल सूची को पंजीकृत किया है, राइस मिल में भंडारण क्षमता आवंटित की है, बीमा का मिलान किया है, और स्वचालित रूप से मार्ग ए का समन्वय किया है।"
+  },
+  te: {
+    heroTitle: "ఒక AI ప్లాట్‌ఫారమ్. మూడు రంగాలు. తెలివైన నిర్ణయాలు.",
+    heroSubtitle: "ట్రైసెక్టార్ AI వ్యవసాయం, పరిశ్రమ మరియు సేవలను ఒకే న్యూరల్ కంట్రోల్ రూమ్‌లోకి అనుసంధానిస్తుంది. పంట దిగుబడి, నిల్వ మరియు రవాణాను నిజ సమయంలో ఆప్టిమైజ్ చేయండి.",
+    launchConsole: "కన్సోల్ ప్రారంభించండి",
+    problemHeader: "వేర్వేరు సాధనాలు పనిచేయడం వల్ల అసమర్థత వస్తుంది",
+    problemSubtitle: "విడివిడి వ్యవస్థలు పనిని నెమ్మదిస్తాయి, వనరులను వృధా చేస్తాయి మరియు పొలాలు, మిల్లులు మరియు రవాణా మధ్య సమన్వయం లేకుండా చేస్తాయి.",
+    ourSolution: "మా పరిష్కారం",
+    solutionTitle: "మూడు ప్రత్యేక రంగాలు. ఒకే తెలివైన ఇంజన్.",
+    solutionSubtitle: "ట్రైసెక్టార్ AI విడివిడి మరియు నెమ్మదైన సాధనాల స్థానంలో ఒకే స్మార్ట్ కంట్రోల్ రూమ్‌ను అందిస్తుంది. మీ పొలాలు, కర్మాగారాలు మరియు సహాయ బృందాల సెన్సార్లను విశ్లేషించి ఇది పనిచేస్తుంది.",
+    liveSimulation: "లైవ్ సిమ్యులేషన్",
+    consoleTitle: "యూనిఫైడ్ ట్రైసెక్టార్ కన్సోల్ ప్రివ్యూ",
+    consoleSubtitle: "నిజ సమయ డ్యాష్‌బోర్డ్‌ను అనుభవించండి. విభిన్న రంగాలను ఎంచుకుని సెన్సార్ ట్రెండ్స్ చూడండి మరియు AI చాట్‌బాట్‌తో మాట్లాడండి.",
+    telemetryStatus: "టెలిమెట్రీ స్థితి",
+    loadingFeed: "ఫీడ్ లోడ్ అవుతోంది...",
+    systemsNominal: "వ్యవస్థలు సాధారణం (సమస్యలు లేవు)",
+    activeWarnings: "యాక్టివ్ హెచ్చరికలు కనుగొనబడ్డాయి",
+    lastSync: "చివరి సమకాలీకరణ",
+    healthIndex: "ఆరోగ్య సూచిక",
+    hourlyTelemetry: "గంటవారీ టెలిమెట్రీ నివేదికలు",
+    loadingChart: "చార్ట్ లోడ్ అవుతోంది...",
+    sensorTrend: "నిజ సమయ సెన్సార్ డేటా ట్రెండ్",
+    sectorAI: "సెక్టార్ AI సహాయకుడు",
+    nodeCopilot: "నోడ్ కోపైలట్ యాక్టివ్",
+    querySector: "AI ని అడగండి...",
+    platformSynergy: "ప్లాట్‌ఫారమ్ సమన్వయం",
+    simulatorTitle: "యూనిఫైడ్ సప్లై చైన్ సిమ్యులేటర్",
+    simulatorSubtitle: "మొత్తం ప్రక్రియ సమన్వయాన్ని అనుభవించండి: రైతు సమర్పించిన పంట వివరాలు రైస్ మిల్లులో నిల్వ సామర్థ్యాన్ని అప్‌డేట్ చేస్తాయి మరియు లారీ రవాణాను, బీమాను వెంటనే జత చేస్తాయి.",
+    farmerInput: "1. వ్యవసాయ ఇన్‌పుట్ (రైతు)",
+    cropListingIngress: "పంట నమోదు",
+    bagsOfPaddyReady: "సిద్ధంగా ఉన్న వరి బస్తాలు",
+    averageLoad: "సగటు లోడ్",
+    maxDispatch: "గరిష్ట డిస్పాచ్",
+    industryVerification: "2. పరిశ్రమ ధృవీకరణ (రైస్ మిల్లు)",
+    storageCapacityExtrusions: "నిల్వ సామర్థ్యం మరియు వెలికితీత",
+    siloSpaceLeft: "సైలోలో ఖాళీ స్థలం",
+    siloTargetMatch: "సైలో సామర్థ్య సరిపోలిక",
+    nominalAllocated: "సాధారణం (కేటాయించబడింది)",
+    overflowSplit: "ఓవర్‌ఫ్లో (సైలో విభజన)",
+    siloHandlesComfortably: "సైలో #3 సులభంగా బస్తాలను నిల్వ చేయగలదు.",
+    needsAuxiliarySilo: "అదనపు సైలో #4 కేటాయింపు అవసరం.",
+    servicesRouting: "3. సేవల రూటింగ్ (రవాణా & ఫైనాన్స్)",
+    dispatchLogistics: "రవాణా మరియు రుణ బీమా సరిపోలిక",
+    transportRoute: "రవాణా మార్గం",
+    optimized: "ఆప్టిమైజ్ చేయబడింది",
+    routeDescription: "ఐ-80 ట్రాఫిక్‌ను నివారిస్తుంది. 18 నిమిషాలు ఆదా చేస్తుంది.",
+    creditInsurance: "రుణం మరియు బీమా రక్షణ",
+    planBMatched: "ప్లాన్ బి ఇన్సూరెన్స్ సరిపోలిక",
+    planBDescription: "రవాణా పంట విలువతో సరిపోలుతుంది",
+    executeLoop: "సమన్వయ లూప్ రన్ చేయి",
+    processingLoop: "లూప్ రన్ అవుతోంది...",
+    synergyContract: "సమన్వయ ఒప్పంద రసీదు",
+    waitingExecution: "రన్ చేయడానికి సిద్ధంగా ఉంది",
+    waitingDescription: "రైతు బస్తాల సంఖ్యను సెట్ చేసి ఒప్పంద రసీదు చూడటానికి 'సమన్వయ లూప్ రన్ చేయి' పై క్లిక్ చేయండి.",
+    contractActive: "ఒప్పందం యాక్టివ్",
+    ingressOrigin: "ప్రారంభ నోడ్",
+    agriNode: "వ్యవసాయ నోడ్ #01",
+    cropListing: "పంట వివరాలు",
+    paddyRice: "బస్తాలు (వరి ధాన్యం)",
+    storageDeployment: "నిల్వ కేటాయింపు",
+    fleetDispatch: "వాహనాల డిస్పాచ్",
+    truckB4RouteA: "మార్గ్ ఎ ద్వారా ట్రక్ #B4",
+    transitCoverPlan: "రవాణా భద్రతా పథకం",
+    insurancePlanB: "బీమా పథకం బి ఆమోదించబడింది",
+    totalContValue: "మొత్తం ఒప్పంద విలువ",
+    synergyAutomation: "డేటాబేస్ బ్రోకర్ పంట నమోదును నమోదు చేసింది, రైస్ మిల్లులో నిల్వ స్థలాన్ని కేటాయించింది, రవాణా మార్గం ఎ ని మరియు బీమాను స్వయంచాలకంగా జత చేసింది."
+  }
+};
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSector, setActiveSector] = useState('agriculture');
@@ -229,6 +431,9 @@ export default function App() {
   const [bagsCount, setBagsCount] = useState(100);
   const [isSimulating, setIsSimulating] = useState(false);
   const [simulationSuccess, setSimulationSuccess] = useState(false);
+  
+  // Multi-Language State
+  const [lang, setLang] = useState('en');
 
   const [dashboardData, setDashboardData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -589,8 +794,22 @@ export default function App() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
+            {/* Language Selector Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-colors cursor-pointer">
+                <Globe size={14} />
+                <span>{lang === 'en' ? 'English' : lang === 'hi' ? 'हिन्दी' : 'తెలుగు'}</span>
+                <ChevronDown size={12} className="opacity-60" />
+              </button>
+              <div className="absolute right-0 mt-2 w-32 rounded-xl bg-slate-950 border border-slate-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col p-1">
+                <button onClick={() => setLang('en')} className="px-3 py-2 text-left text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg cursor-pointer">English</button>
+                <button onClick={() => setLang('hi')} className="px-3 py-2 text-left text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg cursor-pointer">हिन्दी</button>
+                <button onClick={() => setLang('te')} className="px-3 py-2 text-left text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg cursor-pointer">తెలుగు</button>
+              </div>
+            </div>
+
             <a href="#dashboard" className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue-500 to-brand-green-500 text-white text-sm font-bold shadow-md hover:shadow-lg hover:shadow-brand-blue-500/20 transition-all hover:scale-[1.02] duration-200">
-              Launch Console
+              {translations[lang].launchConsole}
             </a>
           </div>
 
@@ -610,8 +829,16 @@ export default function App() {
             <a href="#solution" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-200">Our Solution</a>
             <a href="#sectors" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-200">Sectors</a>
             <a href="#dashboard" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-200">Dashboard Preview</a>
+            
+            {/* Mobile Language Switcher Toggles */}
+            <div className="flex gap-2 py-2 border-y border-white/5">
+              <button onClick={() => { setLang('en'); setMobileMenuOpen(false); }} className={`flex-1 py-2 text-center text-xs font-bold rounded-lg border ${lang === 'en' ? 'bg-slate-900 border-brand-blue-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>English</button>
+              <button onClick={() => { setLang('hi'); setMobileMenuOpen(false); }} className={`flex-1 py-2 text-center text-xs font-bold rounded-lg border ${lang === 'hi' ? 'bg-slate-900 border-brand-blue-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>हिन्दी</button>
+              <button onClick={() => { setLang('te'); setMobileMenuOpen(false); }} className={`flex-1 py-2 text-center text-xs font-bold rounded-lg border ${lang === 'te' ? 'bg-slate-900 border-brand-blue-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>తెలుగు</button>
+            </div>
+
             <a href="#dashboard" onClick={() => setMobileMenuOpen(false)} className="w-full text-center py-3 rounded-xl bg-gradient-to-r from-brand-blue-500 to-brand-green-500 text-white font-bold shadow-md">
-              Launch Console
+              {translations[lang].launchConsole}
             </a>
           </div>
         )}
@@ -626,15 +853,11 @@ export default function App() {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-display">
-              One AI Platform.<br />
-              <span className="bg-gradient-to-r from-brand-blue-400 via-brand-blue-300 to-brand-green-400 bg-clip-text text-transparent glow-blue">
-                Three Sectors.
-              </span><br />
-              Smarter Decisions.
+              {translations[lang].heroTitle}
             </h1>
             
             <p className="text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
-              Trisector AI connects three key sectors—Agriculture, Industry, and Services—under one smart engine. Optimize crop yields, prevent factory machine failures, and speed up customer support in real-time.
+              {translations[lang].heroSubtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-2">
@@ -1103,12 +1326,12 @@ export default function App() {
       <section id="dashboard" className="py-24 bg-transparent relative reveal-item">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-blue-400">Live Simulation</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-blue-400">{translations[lang].liveSimulation}</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight font-display">
-              Unified Trisector Console Preview
+              {translations[lang].consoleTitle}
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Experience the real-time responsive dashboard directly. Switch sectors to query metrics, view sensor chart trends, and chat with the specialized AI chatbot.
+              {translations[lang].consoleSubtitle}
             </p>
 
             {/* Sector Tabs Switcher */}
@@ -1377,7 +1600,7 @@ export default function App() {
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder={`Query the ${activeSector} AI...`}
+                    placeholder={translations[lang].querySector}
                     className="flex-1 px-4 py-3 rounded-xl border border-slate-800 focus:outline-none focus:border-brand-blue-500 text-xs text-white bg-slate-950/50"
                   />
                   <button
@@ -1400,12 +1623,12 @@ export default function App() {
           
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-green-400">Platform Synergy</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-green-400">{translations[lang].platformSynergy}</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight font-display">
-              Unified Supply Chain Simulator
+              {translations[lang].simulatorTitle}
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Experience the end-to-end synergy: A single listing submitted by a **Farmer** instantly updates storage logs for the **Rice Mill** and matches dispatch routes and insurance for the **Fleet**.
+              {translations[lang].simulatorSubtitle}
             </p>
           </div>
 
@@ -1422,14 +1645,14 @@ export default function App() {
                     <Sprout size={16} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">1. Agriculture Input (Farmer)</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold">Crop Listing Ingress</p>
+                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">{translations[lang].farmerInput}</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold">{translations[lang].cropListingIngress}</p>
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-2 mt-2">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-300 font-semibold">Bags of Paddy Ready:</span>
+                    <span className="text-slate-300 font-semibold">{translations[lang].bagsOfPaddyReady}:</span>
                     <span className="text-brand-green-400 font-mono font-bold text-sm bg-brand-green-950/40 px-2 py-0.5 rounded border border-brand-green-900/30">{bagsCount} Bags</span>
                   </div>
                   <input 
@@ -1444,9 +1667,9 @@ export default function App() {
                     className="w-full h-1.5 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-brand-green-400"
                   />
                   <div className="flex justify-between text-[9px] text-slate-500 font-bold font-mono">
-                    <span>10 BAGS</span>
-                    <span>250 BAGS (AVERAGE LOAD)</span>
-                    <span>500 BAGS (MAX DISPATCH)</span>
+                    <span>10 {lang === 'en' ? 'BAGS' : lang === 'hi' ? 'बोरियां' : 'బస్తాలు'}</span>
+                    <span>250 {lang === 'en' ? 'BAGS (AVERAGE LOAD)' : lang === 'hi' ? 'बोरियां (औसत भार)' : 'బస్తాలు (సగటు లోడ్)'}</span>
+                    <span>500 {lang === 'en' ? 'BAGS (MAX DISPATCH)' : lang === 'hi' ? 'बोरियां (अधिकतम प्रेषण)' : 'బస్తాలు (గరిష్ట డిస్పాచ్)'}</span>
                   </div>
                 </div>
               </div>
@@ -1458,29 +1681,29 @@ export default function App() {
                     <Activity size={16} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">2. Industry Verification (Rice Mill)</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold">Storage Capacity & Extrusions</p>
+                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">{translations[lang].industryVerification}</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold">{translations[lang].storageCapacityExtrusions}</p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4 mt-2">
                   <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-850 flex flex-col justify-between">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase">Silo Space Left</span>
-                    <span className="text-base font-bold text-white font-mono mt-1">254 Bags Space</span>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase">{translations[lang].siloSpaceLeft}</span>
+                    <span className="text-base font-bold text-white font-mono mt-1">254 {lang === 'en' ? 'Bags Space' : lang === 'hi' ? 'बोरियां खाली' : 'బస్తాల ఖాళీ స్థలం'}</span>
                     <p className="text-[9px] text-slate-400 mt-1">Silo #3 holds up to 1000 bags</p>
                   </div>
                   
                   <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-850 flex flex-col justify-between">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase">Silo Target Match</span>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase">{translations[lang].siloTargetMatch}</span>
                     <span className={`text-xs font-bold font-mono mt-1.5 inline-flex items-center gap-1 ${
                       bagsCount <= 254 ? 'text-brand-green-400' : 'text-amber-400'
                     }`}>
-                      {bagsCount <= 254 ? '🟢 Nominal (Allocated)' : '⚠️ Overflow (Split Silo)'}
+                      {bagsCount <= 254 ? `🟢 ${translations[lang].nominalAllocated}` : `⚠️ ${translations[lang].overflowSplit}`}
                     </span>
                     <p className="text-[9px] text-slate-400 mt-1">
                       {bagsCount <= 254 
-                        ? `Silo #3 handles ${bagsCount} bags comfortably.` 
-                        : `Needs auxiliary Silo #4 allocation.`}
+                        ? (lang === 'en' ? `Silo #3 handles ${bagsCount} bags comfortably.` : lang === 'hi' ? `साइलो #3 आसानी से ${bagsCount} बोरियों को संभाल सकता है।` : `సైలో #3 సులభంగా ${bagsCount} బస్తాలను నిల్వ చేయగలదు.`) 
+                        : translations[lang].needsAuxiliarySilo}
                     </p>
                   </div>
                 </div>
@@ -1493,22 +1716,22 @@ export default function App() {
                     <Layers size={16} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">3. Services Routing (Transport & Finance)</h4>
-                    <p className="text-[10px] text-slate-400 font-semibold">Dispatch Logistics & Credit Match</p>
+                    <h4 className="font-bold text-white text-sm font-display uppercase tracking-wide">{translations[lang].servicesRouting}</h4>
+                    <p className="text-[10px] text-slate-400 font-semibold">{translations[lang].dispatchLogistics}</p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4 mt-2">
                   <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-850">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase">Transport Route</span>
-                    <span className="block text-xs font-bold text-teal-400 mt-1">Route A (Optimized)</span>
-                    <p className="text-[9px] text-slate-400 mt-1">Avoids I-80 bottle-neck. Saves 18m.</p>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase">{translations[lang].transportRoute}</span>
+                    <span className="block text-xs font-bold text-teal-400 mt-1">Route A ({translations[lang].optimized})</span>
+                    <p className="text-[9px] text-slate-400 mt-1">{translations[lang].routeDescription}</p>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-850">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase">Credit & Insurance Cover</span>
-                    <span className="block text-xs font-bold text-white mt-1">Plan B Cover Match</span>
-                    <p className="text-[9px] text-slate-400 mt-1">Matches transit crop value (${(bagsCount * 3.85).toFixed(0)} USD)</p>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase">{translations[lang].creditInsurance}</span>
+                    <span className="block text-xs font-bold text-white mt-1">{translations[lang].planBMatched}</span>
+                    <p className="text-[9px] text-slate-400 mt-1">{translations[lang].planBDescription} (${(bagsCount * 3.85).toFixed(0)} USD)</p>
                   </div>
                 </div>
               </div>
@@ -1531,10 +1754,10 @@ export default function App() {
                 {isSimulating ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Processing Influx Loop...</span>
+                    <span>{translations[lang].processingLoop}</span>
                   </>
                 ) : (
-                  <span>Execute Unified Influx Loop</span>
+                  <span>{translations[lang].executeLoop}</span>
                 )}
               </button>
 
@@ -1546,7 +1769,7 @@ export default function App() {
               <div className="p-6 rounded-2xl border border-slate-800 bg-slate-950/60 flex flex-col gap-6 text-left h-full min-h-[420px] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green-500/5 rounded-full blur-2xl pointer-events-none"></div>
                 
-                <h4 className="font-bold text-xs uppercase font-mono tracking-widest text-slate-500">Synergy Contract Ledger</h4>
+                <h4 className="font-bold text-xs uppercase font-mono tracking-widest text-slate-500">{translations[lang].synergyContract}</h4>
 
                 {!isSimulating && !simulationSuccess ? (
                   <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 py-8">
@@ -1554,8 +1777,8 @@ export default function App() {
                       <Database size={28} />
                     </div>
                     <div>
-                      <h5 className="font-bold text-white text-sm">Waiting for execution</h5>
-                      <p className="text-xs text-slate-400 max-w-[220px] mx-auto mt-1">Configure farmer bag listings and click "Execute Unified Influx Loop" to view cross-sector contract.</p>
+                      <h5 className="font-bold text-white text-sm">{translations[lang].waitingExecution}</h5>
+                      <p className="text-xs text-slate-400 max-w-[220px] mx-auto mt-1">{translations[lang].waitingDescription}</p>
                     </div>
                   </div>
                 ) : isSimulating ? (
@@ -1576,34 +1799,34 @@ export default function App() {
                 ) : (
                   <div className="flex-1 flex flex-col gap-5 animate-fade-in-up">
                     <div className="flex items-center gap-2 text-brand-green-400 bg-brand-green-950/40 border border-brand-green-900/30 px-3 py-1.5 rounded-lg self-start text-xs font-bold font-mono">
-                      <CheckCircle2 size={14} /> Contract Active
+                      <CheckCircle2 size={14} /> {translations[lang].contractActive}
                     </div>
                     
                     <div className="flex flex-col gap-3 font-mono text-xs border-y border-slate-900 py-4">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">INGRESS ORIGIN:</span>
-                        <span className="text-white font-bold">AGRICULTURE NODE #01</span>
+                        <span className="text-slate-500">{translations[lang].ingressOrigin}:</span>
+                        <span className="text-white font-bold">{translations[lang].agriNode}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">CROP LISTING:</span>
-                        <span className="text-brand-green-400 font-bold">{bagsCount} Bags (Rice Paddy)</span>
+                        <span className="text-slate-500">{translations[lang].cropListing}:</span>
+                        <span className="text-brand-green-400 font-bold">{bagsCount} {translations[lang].paddyRice}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">STORAGE DEPLOYMENT:</span>
+                        <span className="text-slate-500">{translations[lang].storageDeployment}:</span>
                         <span className="text-brand-blue-400 font-bold">
-                          {bagsCount <= 254 ? 'Silo #3 (Nominal Ingest)' : 'Silo #3 + Silo #4 (Split)'}
+                          {bagsCount <= 254 ? `Silo #3 (${translations[lang].nominalAllocated})` : `Silo #3 + Silo #4 (${translations[lang].overflowSplit})`}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">FLEET DISPATCH:</span>
-                        <span className="text-teal-400 font-bold">Truck #B4 via Route A</span>
+                        <span className="text-slate-500">{translations[lang].fleetDispatch}:</span>
+                        <span className="text-teal-400 font-bold">{translations[lang].truckB4RouteA}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">TRANSIT COVER PLAN:</span>
-                        <span className="text-white font-bold">Insurance Plan B matched</span>
+                        <span className="text-slate-500">{translations[lang].transitCoverPlan}:</span>
+                        <span className="text-white font-bold">{translations[lang].insurancePlanB}</span>
                       </div>
                       <div className="flex justify-between border-t border-slate-900 pt-3">
-                        <span className="text-slate-500">TOTAL CONT. VALUE:</span>
+                        <span className="text-slate-500">{translations[lang].totalContValue}:</span>
                         <span className="text-white font-bold">${(bagsCount * 3.85).toFixed(2)} USD</span>
                       </div>
                     </div>
@@ -1611,7 +1834,7 @@ export default function App() {
                     <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex gap-2.5 items-start text-xs leading-relaxed text-slate-300">
                       <Sparkles size={16} className="text-brand-green-400 shrink-0 mt-0.5" />
                       <p>
-                        <strong>Synergy Automation:</strong> The database broker has registered the bags listing, allocated storage slot capacity in the rice mill, matched dynamic transit insurance, and queued Route A dispatch coordinates automatically.
+                        <strong>{lang === 'en' ? 'Synergy Automation' : lang === 'hi' ? 'तालमेल स्वचालन' : 'సమన్వయ స్వचालన'}:</strong> {translations[lang].synergyAutomation}
                       </p>
                     </div>
                   </div>
